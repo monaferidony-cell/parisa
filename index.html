@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>برای پریسا 💗</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;box-sizing:border-box;font-family:Tahoma,sans-serif;background:linear-gradient(135deg,#ffe5ef,#ffc5dc,#fff5f8);color:#a33f69;text-align:center}
+.card{max-width:380px;width:100%;padding:25px 20px;background:#ffffffdf;border-radius:28px;box-shadow:0 15px 45px #bd547533;box-sizing:border-box}
+h1{color:#e6538b}.env{font-size:100px;cursor:pointer;animation:float 2s infinite}
+#letter{display:none;line-height:2.3;background:#fff2f7;padding:18px;border-radius:18px;animation:show .7s}
+button{border:0;border-radius:20px;padding:12px 20px;background:#ef719e;color:white;font-size:16px;cursor:pointer}
+@keyframes float{50%{transform:translateY(-9px)}}
+@keyframes show{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.petal{position:fixed;top:-30px;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(300deg)}}
+</style>
+</head>
+<body>
+<main class="card">
+<div style="font-size:35px">🌸✨💗</div>
+<p>یه سورپرایز کوچولو فقط برای تو...</p>
+<div class="env" onclick="openLetter()">💌</div>
+<p id="hint">برای باز کردن نامه روی پاکت بزن</p>
+<section id="letter">
+<h1>روز دختر مبارک، پریسا جان! 💗</h1>
+<p>بعضی آدما بی‌اینکه خودشون بدونن، حال دنیا رو قشنگ‌تر می‌کنن؛ تو برای من از همون آدمایی.</p>
+<p>امیدوارم دلت همیشه آروم باشه، لبخندت هیچ‌وقت کم‌رنگ نشه و روزهات پر از اتفاق‌های قشنگ باشن.</p>
+<p>آرزو می‌کنم به چیزهایی که از ته دل می‌خوای برسی و همیشه دلیلی برای خندیدن داشته باشی. 🌷</p>
+<h3>روزت مبارک! 💖</h3>
+</section>
+</main>
+<script>
+function openLetter(){
+document.getElementById('letter').style.display='block';
+document.getElementById('hint').style.display='none';
+document.querySelector('.env').style.display='none';
+for(let i=0;i<20;i++){
+let p=document.createElement('span');
+p.className='petal';p.textContent=['🌸','💗','🌷'][i%3];
+p.style.left=Math.random()*100+'vw';
+p.style.animationDuration=(4+Math.random()*5)+'s';
+document.body.appendChild(p);
+setTimeout(()=>p.remove(),10000);
+}
+}
+</script>
+</body>
+</html>
